@@ -1,0 +1,10 @@
+@import '../abstracts/variables';
+
+body {
+    font-family: $body-font;
+}
+
+h1, h2, h3 {
+    font-family: $header-font;
+    color: $purple-dark;
+}

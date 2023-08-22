@@ -1,0 +1,38 @@
+{
+  "name": "Luna Bee Portfilio",
+  "version": "1.0.0",
+  "description": "A Portfilio Site for Luna Bee",
+  "main": "index.html",
+  "scripts": {
+    "build": "npm run clean && npm run imagemin && npm run copyfonts && npm run usemin",
+    "clean": "rimraf public",
+    "copyfonts": "copyfiles -f node_modules/font-awesome/fonts/* public/fonts",
+    "imagemin": "imagemin img/* -o public/img",
+    "lite": "lite-server",
+    "scss": "sass --watch css/main.scss:public/assets/css/styles.css",
+    "start": "npm run watch:all",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "usemin": "usemin index.html -d public --htmlmin -o public/index.html",
+    "watch:scss": "onchange \"/css/*.css\" -- npm run scss",
+    "watch:all": "parallelshell 'npm run scss' 'npm run lite'"
+  },
+  "author": "Luna Barber",
+  "license": "ISC",
+  "devDependencies": {
+    "copyfiles": "^2.2.0",
+    "imagemin-cli": "^5.1.0",
+    "lite-server": "^2.6.1",
+    "onchange": "^7.0.0",
+    "parallelshell": "3.0.1",
+    "rimraf": "^3.0.2",
+    "sass": "^1.63.6",
+    "usemin-cli": "^0.6.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.5.2",
+    "bootstrap-social": "^5.1.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1"
+  } 
+}
